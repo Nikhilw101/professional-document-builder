@@ -87,7 +87,7 @@ const ResumeForm05 = () => {
 
       <div style={{ display: "flex", justifyContent: "center", marginTop: "80px", fontFamily: "kanit", marginBottom: "15vh" }}>
         <Link to="/resumeform04" className="btn btn-outline-danger" style={{ marginRight: "50px", width: "180px", fontSize: "18px" }}>Back</Link>
-          
+        <Link onClick={loadToLocalStorage} to="/resumeform06" className="btn btn-outline-success" style={{ width: "180px", fontSize: "18px" }}>Next</Link>
       </div>
    
     </>
