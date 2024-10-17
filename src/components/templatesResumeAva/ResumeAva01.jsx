@@ -415,7 +415,6 @@ const ResumeAva01 = () => {
         </div>
 
         {/* buttons to print the document */}
-        <div className="main-buttons">
         <div
           className="container"
           style={{
@@ -470,7 +469,6 @@ const ResumeAva01 = () => {
           >
             Next
           </Link>
-        </div>
         </div>
       </div>
 
