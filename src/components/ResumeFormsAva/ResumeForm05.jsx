@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Navbar from '../Navbar';
 import Footer from '../Footer';
 
@@ -11,6 +11,8 @@ const ResumeForm05 = () => {
   document.body.style = 'background: white;';
 
   const [cardcnt, setcardcnt] = useState(0);
+  const [errorMessage, setErrorMessage] = useState(""); // State for error message
+  const navigate = useNavigate(); // Initialize useNavigate
 
   const additem = () => {
     if ((cardCount5 - removedElements5.length) < 1) {
@@ -62,12 +64,39 @@ const ResumeForm05 = () => {
     console.log(ObjOfElements5);
   };
 
+  const validateForm = () => {
+    let isValid = true;
+    setErrorMessage(""); // Clear previous error message
+
+    for (let i = 0; i <= cardCount5; i++) {
+      if (!(removedElements5.includes(Number.parseInt(document.getElementById(`b${i}`).textContent)))) {
+        const titleInput = document.getElementById(`projectTitle${i}`).value.trim();
+        const descInput = document.getElementById(`projectDesc${i}`).value.trim();
+        
+        if (titleInput === "" || descInput === "") {
+          isValid = false;
+          setErrorMessage("Please fill in all project fields."); // Set error message if any field is empty
+          break;
+        }
+      }
+    }
+    return isValid;
+  };
+
+  const handleNext = (e) => {
+    e.preventDefault(); // Prevent default behavior
+    if (validateForm()) {
+      loadToLocalStorage();
+      navigate("/resumeAva01"); // Navigate programmatically if validation passes
+    }
+  };
+
   return (
     <>
-  
       <div style={{ fontFamily: "Questrial", marginTop: "50px", textAlign: "center" }}>
         <h2>Project Information</h2>
       </div>
+      {errorMessage && <div style={{ color: 'red', textAlign: 'center' }}>{errorMessage}</div>} {/* Display error message */}
       <div id='container' className="container text-center" style={{ marginTop: "30px" }}>
         <div id="addnew5">
           <div id="p0" className="mb-3">
@@ -87,9 +116,8 @@ const ResumeForm05 = () => {
 
       <div style={{ display: "flex", justifyContent: "center", marginTop: "80px", fontFamily: "kanit", marginBottom: "15vh" }}>
         <Link to="/resumeform04" className="btn btn-outline-danger" style={{ marginRight: "50px", width: "180px", fontSize: "18px" }}>Back</Link>
-        <Link onClick={loadToLocalStorage} to="/resumeform06" className="btn btn-outline-success" style={{ width: "180px", fontSize: "18px" }}>Next</Link>
+        <button onClick={handleNext} className="btn btn-outline-success" style={{ width: "180px", fontSize: "18px" }}>Next</button>
       </div>
-   
     </>
   );
 };

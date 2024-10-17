@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom'; // Import useNavigate
 import Navbar from '../Navbar';
 import Footer from '../Footer';
 
@@ -11,6 +11,8 @@ const ResumeForm4 = () => {
     document.body.style = 'background: white;';
 
     const [cardcnt, setcardcnt] = useState(0);
+    const [errorMessage, setErrorMessage] = useState(""); // State for error message
+    const navigate = useNavigate(); // Initialize useNavigate
 
     useEffect(() => {
         if (localStorage.getItem("skills")) {
@@ -72,6 +74,31 @@ const ResumeForm4 = () => {
         }));
     };
 
+    const validateForm = () => {
+        let isValid = true;
+        setErrorMessage(""); // Clear previous error message
+
+        for (let i = 0; i <= cardCount4; i++) {
+            if (!(removedElements4.includes(Number.parseInt(document.getElementById(`b${i}`).textContent)))) {
+                const skillInput = document.getElementById(`sk${i}`).value.trim();
+                if (skillInput === "") {
+                    isValid = false;
+                    setErrorMessage("Please fill in all skill fields."); // Set error message if any field is empty
+                    break;
+                }
+            }
+        }
+        return isValid;
+    };
+
+    const handleNext = (e) => {
+        e.preventDefault(); // Prevent default behavior
+        if (validateForm()) {
+            loadToLocalStorage();
+            navigate("/resumeform5"); // Navigate programmatically if validation passes
+        }
+    };
+
     const populateFormAgain4 = () => {
         const TotalElementHTMLCode4 = localStorage.getItem("ResumeFrom4HTML");
         const TotalElementHTMLCode4Count = JSON.parse(localStorage.getItem("skills")).length - 1;
@@ -102,10 +129,10 @@ const ResumeForm4 = () => {
 
     return (
         <>
-         
             <div style={{ fontFamily: "Questrial", marginTop: "50px", textAlign: "center" }}>
                 <h2>Key Skills</h2>
             </div>
+            {errorMessage && <div style={{ color: 'red', textAlign: 'center' }}>{errorMessage}</div>} {/* Display error message */}
             <div id='container' className="container text-center" style={{ maxWidth: "800px", marginTop: "30px", background: "white" }}>
                 <div id="addnew4">
                     <div id="p0" className="mb-3">
@@ -124,9 +151,8 @@ const ResumeForm4 = () => {
             </div>
             <div style={{ display: "flex", justifyContent: "center", marginTop: "80px", fontFamily: "kanit", marginBottom: "35vh" }}>
                 <Link to="/resumeform3" className="btn btn-outline-danger" style={{ marginRight: "50px", width: "180px", fontSize: "18px" }}>Back</Link>
-                <Link onClick={loadToLocalStorage} to="/resumeform5" className="btn btn-outline-success" style={{ width: "180px", fontSize: "18px" }}>Next</Link>
+                <button onClick={handleNext} className="btn btn-outline-success" style={{ width: "180px", fontSize: "18px" }}>Next</button> {/* Changed to button */}
             </div>
-           
         </>
     );
 };

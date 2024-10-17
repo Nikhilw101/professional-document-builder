@@ -265,7 +265,7 @@ const Resume01 = () => {
       </div>
 
       <div style={{ display: "flex", justifyContent: "center", fontFamily: "kanit", marginBottom: "30px", marginTop: "30px" }}>
-        <Link to="/resumeform6" className="btn btn-outline-danger" style={{ marginRight: "50px", width: "180px", fontSize: "18px" }}>Back</Link>
+        <Link to="/resumeform5" className="btn btn-outline-danger" style={{ marginRight: "50px", width: "180px", fontSize: "18px" }}>Back</Link>
         <Link to="/resume02" className="btn btn-outline-success" style={{ width: "180px", fontSize: "18px" }}>Next</Link>
       </div>
     </>
