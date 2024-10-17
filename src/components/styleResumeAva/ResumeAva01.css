@@ -218,13 +218,139 @@ h4{
   }
 
 
-  /* Mobile view styles */
-@media (max-width: 768px) { /* Adjust the max-width as per your needs */
-    .containermain {
-      display: none; /* Hide main container on mobile view */
-    }
-  
-    .resume-image-mobile-view {
-      display: block; /* Show mobile view on mobile */
-    }
+
+@media (max-width: 768px){
+ 
+.main-buttons{
+    display: none;
+}
+  .resume-image-mobile-view {
+    display: block; 
   }
+}
+
+
+
+
+@media (max-width: 856px) {
+
+   
+    .resumet01 {
+        grid-template-columns: 1fr; /* Single column layout for smaller screens */
+        width: 100%; /* Full width */
+        height: auto; /* Automatic height */
+        box-shadow: none; /* Remove shadow for smaller screens */
+    }
+
+    .titlet01, .title1t01 {
+        width: 100%; /* Full width for titles */
+    }
+
+    .imgcontainert01 {
+        height: 150px; /* Adjust image height */
+        width: 150px; /* Adjust image width */
+    }
+
+    .fullnameAndPostt01 {
+        width: 100%; /* Full width */
+    }
+
+    .namet01 {
+        font-size: 1.75rem; /* Responsive font size */
+    }
+
+    .positiont01 {
+        font-size: 1.25rem; /* Responsive font size */
+    }
+
+    #contactinfot01 ul {
+        font-size: 1rem; /* Adjust font size */
+    }
+
+    .text2t01 {
+        width: 100%; /* Full width */
+    }
+
+    .addres {
+        width: 100%; /* Full width */
+    }
+
+    .boxt01 {
+        padding-left: 20px; /* Adjust padding */
+        padding-right: 20px; /* Adjust padding */
+    }
+
+    .protitlet01 {
+        font-size: 1.5rem; /* Responsive font size */
+    }
+
+    .prodescript01 {
+        font-size: 1rem; /* Responsive font size */
+    }
+
+    #Skillst01 ul {
+        font-size: 1rem; /* Adjust font size */
+    }
+
+    #summaryt01 {
+        font-size: 1rem; /* Adjust font size */
+    }
+
+    .rightsidelistt01 li div {
+        font-size: 1rem; /* Adjust font size */
+    }
+
+    .jobtitlet01, .companynamet01, .durationt01 {
+        font-size: 1rem; /* Adjust font size */
+    }
+}
+
+@media (max-width: 430px) {
+    .resumet01 {
+        grid-template-columns: 1fr; /* Single column layout for mobile */
+        width: 95%; /* Full width on mobile */
+        height: auto; /* Allow height to adjust automatically */
+        box-shadow: none; /* Remove shadow for mobile */
+    }
+
+    .leftt01, .rightt01 {
+        padding: 10px; /* Add padding for mobile */
+        width: 100%; /* Ensure full width */
+    }
+
+    .titlet01, .title1t01 {
+        font-size: 1.25rem; /* Adjust title sizes */
+        width: 100%; /* Ensure full width */
+    }
+
+    .fullnameAndPostt01, .contactinfot01, .boxt01, .projectsListt01, .protitlet01 {
+        width: 90%; /* Reduce width for better fit */
+        margin: auto; /* Center the content */
+    }
+
+    .namet01, .positiont01, .prodescript01, .text2t01, .addres, .skillsListt01 {
+        font-size: 0.9rem; /* Reduce font sizes */
+    }
+
+    .imgcontainert01 {
+        height: 120px; /* Reduce image height */
+        width: 120px; /* Reduce image width */
+    }
+
+    .userPhotot01 {
+        height: 100%;
+        width: 100%;
+    }
+
+    .jobtitlet01, .companynamet01, .durationt01 {
+        font-size: 0.9rem; /* Reduce font sizes */
+    }
+
+    .protitlet01, .rightsidelistt01 li div {
+        font-size: 1rem; /* Adjust font size */
+    }
+
+    #summaryt01 {
+        font-size: 0.9rem; /* Adjust font size */
+    }
+}

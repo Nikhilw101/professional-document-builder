@@ -108,6 +108,22 @@ const ResumeAva01 = () => {
     document.body.removeChild(link); // Remove the link from the DOM
   };
 
+
+  useEffect(() => {
+    const handleResize = () => {
+      // Reload the image when the window is resized
+      const img = document.getElementById('saved-resume-image'); // Assign a unique ID to the image
+      if (img) {
+        img.src = img.src; // Reload the image
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+  
   const populateSkills = (skills) => {
     if (skills[0].skill !== "") {
       setResumeSkills(
@@ -399,6 +415,7 @@ const ResumeAva01 = () => {
         </div>
 
         {/* buttons to print the document */}
+        <div className="main-buttons">
         <div
           className="container"
           style={{
@@ -454,6 +471,7 @@ const ResumeAva01 = () => {
             Next
           </Link>
         </div>
+        </div>
       </div>
 
 
@@ -475,11 +493,14 @@ const ResumeAva01 = () => {
   <div className="resume-image-mobile-view mt-2">
   <div className="image-container text-center">
     {savedImage && (
-      <img
-        src={savedImage}
-        alt="Saved Resume"
-        className="img-fluid" // Bootstrap class for responsive images
-      />
+     <img
+     id="saved-resume-image" // Add an ID to the image for the resize handler
+     src={savedImage}
+     alt="Saved Resume"
+     className="img-fluid" // Bootstrap class for responsive images
+     onLoad={() => console.log("Image loaded successfully")} // Log when the image is loaded
+     onError={() => console.error("Error loading image")} // Log if there's an error
+   />
     )}
 
     {/* Buttons to print the document */}
