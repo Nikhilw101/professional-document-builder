@@ -36,22 +36,24 @@ const Resume02 = () => {
 
     //Project info
     const [projectInfoHTML, setprojectInfoHTML] = useState()
-    useEffect(() => {
-        const handleResize = () => {
-          if (window.innerWidth < 768) {
-            alert('For a better experience, please switch to desktop mode.');
-          }
-        };
+    const [alertShown, setAlertShown] = useState(false);
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768 && !alertShown) {
+        alert('For a better experience, please switch to desktop mode.');
+        setAlertShown(true);
+      }
+    };
+
+    // Initial check
+    handleResize();
     
-        // Initial check
-        handleResize();
-        
-        // Add event listener for window resize
-        window.addEventListener('resize', handleResize);
-    
-        // Cleanup event listener on component unmount
-        return () => window.removeEventListener('resize', handleResize);
-      }, []);
+    // Add event listener for window resize
+    window.addEventListener('resize', handleResize);
+
+    // Cleanup event listener on component unmount
+    return () => window.removeEventListener('resize', handleResize);
+  }, [alertShown]);
     useEffect(() => {
         // Alert for mobile users
         

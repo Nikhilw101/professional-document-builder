@@ -217,3 +217,109 @@
   line-height: 1.1;
 } 
 
+
+/* Mobile Responsiveness using Bootstrap and media queries */
+@media (max-width: 826px) {
+    .resumet03 {
+        width: 95%;
+        box-shadow: none;
+    }
+
+    .upperpartt03 {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .imgcontainert03 {
+        height: 150px;
+        width: 150px;
+        margin-bottom: 20px;
+    }
+
+    .userPhotot03 {
+        margin: 0;
+        border-radius: 50%;
+    }
+
+    #contactinfot03 {
+        position: relative; /* Changed to relative */
+        margin-top: 500px;
+        padding: 10px;
+        border-radius: 5px;
+        text-align: left;
+        margin-left: -27vw;
+    }
+
+    .fullnameAndPostt03 {
+        margin-top: 10px;
+        width: 90%;
+        margin: auto;
+    }
+
+    .lowerpartt03 {
+        grid-template-columns: 1fr;
+    }
+
+    .leftsidelist1t03 li div, .projectsListt03 {
+        font-size: 15px;
+    }
+
+    .leftsidelist1t03 li div h4, .jobtitlet03, .protitlet03 {
+        font-size: 1rem;
+    }
+
+    .companynamet03, .durationt03, .prodescript03, #summaryt03, .experienceblock {
+        font-size: 1rem;
+    }
+}
+
+/* Further adjustments for very small screens, max-width: 428px */
+@media (max-width: 428px) {
+    .resumet03 {
+        width: 100%;
+        border: none;
+        box-shadow: none;
+    }
+
+    .upperpartt03 {
+        padding: 5px;
+        margin: 10px 0;
+    }
+
+    .imgcontainert03 {
+        height: 100px;
+        width: 100px;
+    }
+
+    .fullnameAndPostt03 {
+        margin-top: 5px;
+        width: 100%;
+    }
+
+    #contactinfot03 {
+        position: relative; /* Changed to relative */
+        margin-top: 60vh;
+        padding: 10px;
+        border-radius: 5px;
+        text-align: left;
+        margin-left: -12vw;
+    }
+
+    .lowerpartt03 {
+        grid-template-columns: 1fr;
+    }
+
+    .leftsidelist1t03 li div, .projectsListt03 {
+        font-size: 12px;
+    }
+
+    .leftsidelist1t03 li div h4, .jobtitlet03, .protitlet03 {
+        font-size: 0.875rem;
+    }
+
+    .companynamet03, .durationt03, .prodescript03, #summaryt03, .experienceblock {
+        font-size: 0.875rem;
+    }
+}

@@ -80,22 +80,24 @@ const ResumeAva03 = () => {
         const projectInfo = JSON.parse(localStorage.getItem('projectInfo'));
         populateProject(projectInfo);
     }, [])
+    const [alertShown, setAlertShown] = useState(false);
     useEffect(() => {
-        const handleResize = () => {
-          if (window.innerWidth < 768) {
-            alert('For a better experience, please switch to desktop mode.');
-          }
-        };
-    
-        // Initial check
-        handleResize();
-        
-        // Add event listener for window resize
-        window.addEventListener('resize', handleResize);
-    
-        // Cleanup event listener on component unmount
-        return () => window.removeEventListener('resize', handleResize);
-      }, []);
+      const handleResize = () => {
+        if (window.innerWidth < 768 && !alertShown) {
+          alert('For a better experience, please switch to desktop mode.');
+          setAlertShown(true);
+        }
+      };
+  
+      // Initial check
+      handleResize();
+      
+      // Add event listener for window resize
+      window.addEventListener('resize', handleResize);
+  
+      // Cleanup event listener on component unmount
+      return () => window.removeEventListener('resize', handleResize);
+    }, [alertShown]);
     const populateSkills = (skills) => {
         if (skills[0].skill !== "") {
             setResumeSkills(

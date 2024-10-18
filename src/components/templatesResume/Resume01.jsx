@@ -39,10 +39,12 @@ const Resume01 = () => {
   const [projectInfoHTML, setprojectInfoHTML] = useState()
 
   // Check for mobile view
+  const [alertShown, setAlertShown] = useState(false);
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth < 768) {
+      if (window.innerWidth < 768 && !alertShown) {
         alert('For a better experience, please switch to desktop mode.');
+        setAlertShown(true);
       }
     };
 
@@ -54,7 +56,7 @@ const Resume01 = () => {
 
     // Cleanup event listener on component unmount
     return () => window.removeEventListener('resize', handleResize);
-  }, []);
+  }, [alertShown]);
 
   useEffect(() => {
     // Image photo 

@@ -196,3 +196,86 @@
     font-weight: bold;
 }
 
+@media (max-width: 826px) {
+    .resumet02 {
+        grid-template-columns: 1fr; /* Single column layout for mobile */
+        height: auto; /* Allow height to adjust automatically */
+        width: 95%; /* Full width on mobile */
+        box-shadow: none; /* Remove shadow for mobile */
+    }
+
+    .leftt02, .rightt02 {
+        padding: 10px; /* Add padding for mobile */
+        width: 100%; /* Ensure full width */
+    }
+
+    .fullnameAndPost, .contactDetailst02, .skillst02 {
+        width: 90%; /* Reduce width for better fit */
+        max-width: none; /* Remove max-width for mobile */
+        margin: auto; /* Center align */
+    }
+
+    .Namet02 {
+        font-size: 1.75rem; /* Responsive font size */
+    }
+
+    .jobtitlet02, .skillsTitlet02, .SummaryTitlet02, .expTitlet02, .eduTitlet02, .projectTitlet02 {
+        font-size: 1.25rem; /* Adjust title sizes */
+    }
+
+    .summaryT02 {
+        font-size: 1rem; /* Adjust summary text size */
+    }
+
+    .projectDetailst02 {
+        width: 90%; /* Adjust project details width */
+        margin-left: 0; /* Remove left margin */
+    }
+
+    .imgcontainert02 {
+        height: 150px; /* Adjust image container height */
+        width: 150px; /* Adjust image container width */
+    }
+
+    .icond02 {
+        width: 20px; /* Adjust icon size */
+        height: 25px; /* Adjust icon size */
+    }
+
+    /* Additional adjustments for font sizes */
+    .expTitlet02, .eduTitlet02, .projectTitlet02, .skillsTitlet02, .contactTitlet02 {
+        font-size: 1.125rem; /* Smaller font size for mobile */
+    }
+
+    .summaryCardt02 {
+        width: 90%; /* Ensure summary card fits on mobile */
+        padding: 10px; /* Adjust padding */
+    }
+
+    .summaryT02 {
+        font-size: 0.875rem; /* Smaller font size for summary text */
+    }
+
+    .expCard, .eduCard, .projectCard {
+        width: 100%; /* Make experience, education, and project cards full width */
+    }
+}
+
+/* Further adjustments for very small screens */
+@media (max-width: 428px) {
+    .Namet02 {
+        font-size: 1.5rem; /* Further reduce font size for very small screens */
+    }
+
+    .jobtitlet02, .skillsTitlet02, .SummaryTitlet02, .expTitlet02, .eduTitlet02, .projectTitlet02 {
+        font-size: 1rem; /* Further reduce title sizes */
+    }
+
+    .summaryT02 {
+        font-size: 0.875rem; /* Adjust summary text size */
+    }
+
+    .expTitlet02, .eduTitlet02, .projectTitlet02, .skillsTitlet02 {
+        margin-bottom: 8px; /* Reduce spacing between titles */
+    }
+}

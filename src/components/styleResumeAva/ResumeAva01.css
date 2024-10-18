@@ -1,230 +1,336 @@
-.containert01{
-    padding-top: 5vh;
-    padding-bottom: 5vh;
-    font-family: 'Arimo', sans-serif;
-}
-.resumet01{
-    height:1123px;
-    width:795px;
-    margin:auto;
-    display:grid;
-    grid-template-columns:1.3fr 2fr;
-    background-color:white;
-    border:1px solid rgb(73, 73, 73);
-    box-shadow:8px 8px 9px grey;
-}
-.titlet01{
-    font-size: 25px; /*title font size */
-    letter-spacing: 0.5px;
-    width:300px;
-    border-bottom:2px solid white;
-    padding-bottom:3px; /*margin padding at title bottom to maintain distance with content */
-    margin-bottom:5px;
-    font-weight: bold;
-}
-.leftt01{
-    color:white;
-    background-color: #323B4C;
-}
-.imgcontainert01{
-    height:220px;
-    width:220px;
-    margin:auto;
-    margin-top:20px;
-    overflow:hidden; 
-    border-radius:50%;
-    border:5px solid white;
-}
-.userPhotot01{
-    height:100%;
-    width:100%;
-}
-.fullnameAndPostt01{
-    width:270px;
-    margin:auto;
-    margin-top:15px;
-    text-align:center;
-    letter-spacing:0.5px;
-    margin-bottom: 20px;
-    line-height: 1.2;
-}
-.namet01{
-    word-wrap:break-word;
-    font-size:30px;
-    font-weight: 500;
-}
-.positiont01{
-    padding-top:5px;
-    font-size:23px;
-}
-#contactinfot01{
-    /* min-height:150px; */
-    margin-bottom:20px;
-    padding-bottom: 20px; /*to maintain distance with new section education */
-}
-#contactinfot01 ul{
-    margin-top:20px;
-    letter-spacing: 0.5px;
-    font-size:17.1px; /* font-size */
-    list-style: none;
-    padding-bottom:40px;
-}
-#contactinfot01 ul li{
-    padding-top:5px;
-}
-.icont01{
-    display:inline-block;
-    width:30px;
-    height:25px;
-}
-#icon2t01{
-    float:left; 
-}
-.text2t01{
-    word-wrap:break-word;
-    display:inline-block;
-    width:210px;
-    float:left;
-}
-#icon4t01{
-    float:left;
-}
-.addres{
-    display:inline-block;
-    width:230px;
-    float:left;
-}
-.boxt01{
-    padding-left:35px; /*important padding*/
-    padding-right:5px;
-}
-#protitt01{
-    margin-bottom:7px;
-}
-.projectsListt01{
-    padding-left: 15px;
-}
-#protitt01{
-    margin-top:17.1px;
-    margin-bottom: 4px;
-}
-.protitlet01{
-    font-size:18px;
-    margin-top: 15px;
-    font-weight: 500;
-    line-height: 1.3;
-    font-weight: bold;
-    letter-spacing: 0.4px;
-}  
-.prodescript01{
-    font-size: 17.1px;
-    line-height: 1.2;
-}  
-#Skillst01{
-    margin-top:25px;
-}
-#Skillst01 ul{
-    font-size: 17.1px;
-    margin-top: 10px;
-}
-#Skillst01 ul li{
-    font-size: 17.1px;
-    padding-top: 5px;
-}
-.rightt01{
-    background-color: white;
-    margin-top:25px;
-}
-.title1t01{
-    font-size: 25px; /*title font size */
-    letter-spacing: 0.5px;
-    width:400px;
-    border-bottom:2px solid black;
-    padding-bottom:3px; /*margin padding at title bottom to maintain distance with content */
-    margin-bottom:12px;
-    font-weight: bold;
-}
-#summaryboxt01{
-    max-height: 235px;
-    overflow: hidden;
-    line-height: 1.2;
-}
-#summaryt01{
-    font-size:17.1px;
-    max-height:125px;
-    line-height:1.2;
-    letter-spacing: 0.2;
-}
-h4{
-    font-size:17px; /* font-size */
-}
-#educatetitlet01{
-    padding-top:20px; /*to maintain distance with upper content such as contacts*/
-    padding-bottom:3px;
-    margin-bottom: 3px;
-}
-.rightsidelistt01 li{
-    letter-spacing: 0.2;
-    margin-top:5px;
-}
-.rightsidelistt01 li div{
-    font-size:17.1px;
-    line-height:1.2;
-}
-.rightsidelistt01 li div h4{
-    font-size:18px;
-    padding-top: 10px;
-    margin-bottom: 0.01rem;
-    font-weight: 500;
-    line-height: 1.4;
-    font-weight: bold;
-    letter-spacing: 0.4px;
-}
-.rightsidelistt01{
-    padding:5px;
-    list-style: none;
-}
-#experiencet01{
-    font-size: 17.1px;
-    padding-bottom:1px;
-    margin-top:7px;
-}
-#experiencet01 h3{
-    margin-top:15px;
-}
-#experiencet01 div{
-    font-size: 17.1px;
-    line-height: 1.3;
-    letter-spacing: 0.3;
-}
-.jobtitlet01{
-    margin-top:15px;
-    font-size:18px;
-    font-weight:bold;
-}
-.companynamet01{
-    font-size:17.1px;
-    letter-spacing: 0.4px;
-    line-height:1.2;
-}
-.durationt01{
-    font-size:17.1px;
-    letter-spacing: 0.4px;
-    line-height:1.2;
+    .containert01{
+        padding-top: 5vh;
+        padding-bottom: 5vh;
+        font-family: 'Arimo', sans-serif;
+    }
+    .resumet01{
+        height:1123px;
+        width:795px;
+        margin:auto;
+        display:grid;
+        grid-template-columns:1.3fr 2fr;
+        background-color:white;
+        border:1px solid rgb(73, 73, 73);
+        box-shadow:8px 8px 9px grey;
+    }
+    .titlet01{
+        font-size: 25px; /*title font size */
+        letter-spacing: 0.5px;
+        width:300px;
+        border-bottom:2px solid white;
+        padding-bottom:3px; /*margin padding at title bottom to maintain distance with content */
+        margin-bottom:5px;
+        font-weight: bold;
+    }
+    .leftt01{
+        color:white;
+        background-color: #323B4C;
+    }
+    .imgcontainert01{
+        height:220px;
+        width:220px;
+        margin:auto;
+        margin-top:20px;
+        overflow:hidden; 
+        border-radius:50%;
+        border:5px solid white;
+    }
+    .userPhotot01{
+        height:100%;
+        width:100%;
+    }
+    .fullnameAndPostt01{
+        width:270px;
+        margin:auto;
+        margin-top:15px;
+        text-align:center;
+        letter-spacing:0.5px;
+        margin-bottom: 20px;
+        line-height: 1.2;
+    }
+    .namet01{
+        word-wrap:break-word;
+        font-size:30px;
+        font-weight: 500;
+    }
+    .positiont01{
+        padding-top:5px;
+        font-size:23px;
+    }
+    #contactinfot01{
+        /* min-height:150px; */
+        margin-bottom:20px;
+        padding-bottom: 20px; /*to maintain distance with new section education */
+    }
+    #contactinfot01 ul{
+        margin-top:20px;
+        letter-spacing: 0.5px;
+        font-size:17.1px; /* font-size */
+        list-style: none;
+        padding-bottom:40px;
+    }
+    #contactinfot01 ul li{
+        padding-top:5px;
+    }
+    .icont01{
+        display:inline-block;
+        width:30px;
+        height:25px;
+    }
+    #icon2t01{
+        float:left; 
+    }
+    .text2t01{
+        word-wrap:break-word;
+        display:inline-block;
+        width:210px;
+        float:left;
+    }
+    #icon4t01{
+        float:left;
+    }
+    .addres{
+        display:inline-block;
+        width:230px;
+        float:left;
+    }
+    .boxt01{
+        padding-left:35px; /*important padding*/
+        padding-right:5px;
+    }
+    #protitt01{
+        margin-bottom:7px;
+    }
+    .projectsListt01{
+        padding-left: 15px;
+    }
+    #protitt01{
+        margin-top:17.1px;
+        margin-bottom: 4px;
+    }
+    .protitlet01{
+        font-size:18px;
+        margin-top: 15px;
+        font-weight: 500;
+        line-height: 1.3;
+        font-weight: bold;
+        letter-spacing: 0.4px;
+    }  
+    .prodescript01{
+        font-size: 17.1px;
+        line-height: 1.2;
+    }  
+    #Skillst01{
+        margin-top:25px;
+    }
+    #Skillst01 ul{
+        font-size: 17.1px;
+        margin-top: 10px;
+    }
+    #Skillst01 ul li{
+        font-size: 17.1px;
+        padding-top: 5px;
+    }
+    .rightt01{
+        background-color: white;
+        margin-top:25px;
+    }
+    .title1t01{
+        font-size: 25px; /*title font size */
+        letter-spacing: 0.5px;
+        width:400px;
+        border-bottom:2px solid black;
+        padding-bottom:3px; /*margin padding at title bottom to maintain distance with content */
+        margin-bottom:12px;
+        font-weight: bold;
+    }
+    #summaryboxt01{
+        max-height: 235px;
+        overflow: hidden;
+        line-height: 1.2;
+    }
+    #summaryt01{
+        font-size:17.1px;
+        max-height:125px;
+        line-height:1.2;
+        letter-spacing: 0.2;
+    }
+    h4{
+        font-size:17px; /* font-size */
+    }
+    #educatetitlet01{
+        padding-top:20px; /*to maintain distance with upper content such as contacts*/
+        padding-bottom:3px;
+        margin-bottom: 3px;
+    }
+    .rightsidelistt01 li{
+        letter-spacing: 0.2;
+        margin-top:5px;
+    }
+    .rightsidelistt01 li div{
+        font-size:17.1px;
+        line-height:1.2;
+    }
+    .rightsidelistt01 li div h4{
+        font-size:18px;
+        padding-top: 10px;
+        margin-bottom: 0.01rem;
+        font-weight: 500;
+        line-height: 1.4;
+        font-weight: bold;
+        letter-spacing: 0.4px;
+    }
+    .rightsidelistt01{
+        padding:5px;
+        list-style: none;
+    }
+    #experiencet01{
+        font-size: 17.1px;
+        padding-bottom:1px;
+        margin-top:7px;
+    }
+    #experiencet01 h3{
+        margin-top:15px;
+    }
+    #experiencet01 div{
+        font-size: 17.1px;
+        line-height: 1.3;
+        letter-spacing: 0.3;
+    }
+    .jobtitlet01{
+        margin-top:15px;
+        font-size:18px;
+        font-weight:bold;
+    }
+    .companynamet01{
+        font-size:17.1px;
+        letter-spacing: 0.4px;
+        line-height:1.2;
+    }
+    .durationt01{
+        font-size:17.1px;
+        letter-spacing: 0.4px;
+        line-height:1.2;
+    }
+
+   
+@media (max-width: 856px) {
+    .resumet01 {
+        grid-template-columns: 1fr; /* Single column layout for smaller screens */
+        width: 100%; /* Full width */
+        height: auto; /* Automatic height */
+        box-shadow: none; /* Remove shadow for smaller screens */
+    }
+
+    .titlet01, .title1t01 {
+        width: 100%; /* Full width for titles */
+    }
+
+    .imgcontainert01 {
+        height: 150px; /* Adjust image height */
+        width: 150px; /* Adjust image width */
+    }
+
+    .fullnameAndPostt01 {
+        width: 100%; /* Full width */
+    }
+
+    .namet01 {
+        font-size: 1.75rem; /* Responsive font size */
+    }
+
+    .positiont01 {
+        font-size: 1.25rem; /* Responsive font size */
+    }
+
+    #contactinfot01 ul {
+        font-size: 1rem; /* Adjust font size */
+    }
+
+    .text2t01 {
+        width: 100%; /* Full width */
+    }
+
+    .addres {
+        width: 100%; /* Full width */
+    }
+
+    .boxt01 {
+        padding-left: 20px; /* Adjust padding */
+        padding-right: 20px; /* Adjust padding */
+    }
+
+    .protitlet01 {
+        font-size: 1.5rem; /* Responsive font size */
+    }
+
+    .prodescript01 {
+        font-size: 1rem; /* Responsive font size */
+    }
+
+    #Skillst01 ul {
+        font-size: 1rem; /* Adjust font size */
+    }
+
+    #summaryt01 {
+        font-size: 1rem; /* Adjust font size */
+    }
+
+    .rightsidelistt01 li div {
+        font-size: 1rem; /* Adjust font size */
+    }
+
+    .jobtitlet01, .companynamet01, .durationt01 {
+        font-size: 1rem; /* Adjust font size */
+    }
 }
 
-.resume-image-mobile-view {
-    display: none; /* Hide mobile view by default */
-  }
+@media (max-width: 430px) {
+    .resumet01 {
+        grid-template-columns: 1fr; /* Single column layout for mobile */
+        width: 95%; /* Full width on mobile */
+        height: auto; /* Allow height to adjust automatically */
+        box-shadow: none; /* Remove shadow for mobile */
+    }
 
+    .leftt01, .rightt01 {
+        padding: 10px; /* Add padding for mobile */
+        width: 100%; /* Ensure full width */
+    }
 
-  /* Mobile view styles */
-@media (max-width: 768px) { /* Adjust the max-width as per your needs */
-  .containermain {
-    display: none; /* Hide main container on mobile view */
-  }
+    .titlet01, .title1t01 {
+        font-size: 1.25rem; /* Adjust title sizes */
+        width: 100%; /* Ensure full width */
+    }
 
-  .resume-image-mobile-view {
-    display: block; /* Show mobile view on mobile */
-  }
+    .fullnameAndPostt01, .contactinfot01, .boxt01, .projectsListt01, .protitlet01 {
+        width: 90%; /* Reduce width for better fit */
+        margin: auto; /* Center the content */
+    }
+
+    .namet01, .positiont01, .prodescript01, .text2t01, .addres, .skillsListt01 {
+        font-size: 0.9rem; /* Reduce font sizes */
+    }
+
+    .imgcontainert01 {
+        height: 120px; /* Reduce image height */
+        width: 120px; /* Reduce image width */
+    }
+
+    .userPhotot01 {
+        height: 100%;
+        width: 100%;
+    }
+
+    .jobtitlet01, .companynamet01, .durationt01 {
+        font-size: 0.9rem; /* Reduce font sizes */
+    }
+
+    .protitlet01, .rightsidelistt01 li div {
+        font-size: 1rem; /* Adjust font size */
+    }
+
+    #summaryt01 {
+        font-size: 0.9rem; /* Adjust font size */
+    }
 }
