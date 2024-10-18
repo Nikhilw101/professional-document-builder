@@ -119,7 +119,7 @@ const ResumeForm1 = () => {
                         </div>
                         <div className="col">
                             <label htmlFor="idaddress" className="form-label">Address</label>
-                            <input ref={add} type="text" className="form-control" id="idaddress" placeholder="Street name, no." />
+                            <input ref={add} type="text" className="form-control" values="somthig" id="idaddress" placeholder="Street name, no." />
                             {errors.address && <div className="text-danger">{errors.address}</div>}
                         </div>
                         <div className="row row-cols-1 row-cols-md-2 g-3">
