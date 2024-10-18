@@ -245,7 +245,7 @@
 
     #contactinfot03 {
         position: relative; /* Changed to relative */
-        margin-top: 500px;
+        margin-top: 700px;
         padding: 10px;
         border-radius: 5px;
         text-align: left;
@@ -300,11 +300,11 @@
 
     #contactinfot03 {
         position: relative; /* Changed to relative */
-        margin-top: 550px;
+        margin-top: 650px;
         padding: 10px;
         border-radius: 5px;
         text-align: left;
-        margin-left: -12vw;
+        margin-left: -27vw;
     }
 
     .lowerpartt03 {
@@ -321,5 +321,32 @@
 
     .companynamet03, .durationt03, .prodescript03, #summaryt03, .experienceblock {
         font-size: 0.875rem;
+    }
+}
+
+@media (max-width: 826px) {
+    #contactinfot03 {
+        padding: 10px; /* Adjust padding for smaller screens */
+        margin-top: 20px; /* Adjust margin */
+        border-radius: 5px; /* Maintain rounded corners */
+    }
+
+    #contactinfot03 ul {
+        font-size: 15px; /* Reduce font size */
+    }
+
+    #contactinfot03 ul li {
+        flex-direction: column; /* Stack icon and text vertically */
+        align-items: flex-start; /* Align items to the left */
+    }
+}
+
+@media (max-width: 428px) {
+    #contactinfot03 {
+        margin-top: 10px; /* Further reduce margin */
+    }
+
+    #contactinfot03 ul {
+        font-size: 12px; /* Smaller font size for very small screens */
     }
 }

@@ -89,85 +89,85 @@ const ResumeForm1 = () => {
 
     return (
         <>
-            <div style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
-                <div style={{ flex: "1 0 auto", minHeight: "80vh", backgroundColor: "white", border: "2px solid white", paddingBottom: "50px" }}>
-                    <div className='container' style={{ fontFamily: "Questrial", marginTop: "50px", textAlign: "center" }}>
-                        <h2>Personal Details</h2>
-                    </div>
-                    <div className="container text-center" style={{ maxWidth: "800px", marginTop: "30px" }}>
-                        <div className="row row-cols-1 row-cols-md-2 g-3">
-                            <div className="col">
-                                <label htmlFor="idfirstname" className="form-label">First Name</label>
-                                <input ref={fname} type="text" className="form-control" id="idfirstname" placeholder="First Name" />
-                                {errors.firstname && <div className="text-danger">{errors.firstname}</div>}
-                            </div>
-                            <div className="col">
-                                <label htmlFor="idlastname" className="form-label">Last Name</label>
-                                <input ref={lname} type="text" className="form-control" id="idlastname" placeholder="Last Name" />
-                                {errors.lastname && <div className="text-danger">{errors.lastname}</div>}
-                            </div>
-                            <div className="col">
-                                <label htmlFor="idphone" className="form-label">Phone</label>
-                                <input ref={phn} type="text" className="form-control" id="idphone" placeholder="Phone" />
-                                {errors.phone && <div className="text-danger">{errors.phone}</div>}
-                            </div>
-                            <div className="col">
-                                <label htmlFor="idemail" className="form-label">Email Address</label>
-                                <input ref={eid} type="email" className="form-control" id="idemail" placeholder="Email Address" />
-                                {errors.email && <div className="text-danger">{errors.email}</div>}
-                            </div>
+        <div style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
+            <div style={{ flex: "1 0 auto", minHeight: "80vh", backgroundColor: "white", border: "2px solid white", paddingBottom: "50px" }}>
+                <div className='container' style={{ fontFamily: "Questrial", marginTop: "50px", textAlign: "center" }}>
+                    <h2>Personal Details</h2>
+                </div>
+                <div className="container text-center" style={{ maxWidth: "800px", marginTop: "30px" }}>
+                    <div className="row row-cols-1 row-cols-md-2 g-3">
+                        <div className="col">
+                            <label htmlFor="idfirstname" className="form-label">First Name</label>
+                            <input ref={fname} type="text" className="form-control" id="idfirstname" placeholder="First Name" defaultValue="Prem" />
+                            {errors.firstname && <div className="text-danger">{errors.firstname}</div>}
                         </div>
                         <div className="col">
-                            <label htmlFor="idaddress" className="form-label">Address</label>
-                            <input ref={add} type="text" className="form-control" values="somthig" id="idaddress" placeholder="Street name, no." />
-                            {errors.address && <div className="text-danger">{errors.address}</div>}
-                        </div>
-                        <div className="row row-cols-1 row-cols-md-2 g-3">
-                            <div className="col">
-                                <label htmlFor="idcity" className="form-label">City</label>
-                                <input ref={city} type="text" className="form-control" id="idcity" placeholder="City" />
-                                {errors.city && <div className="text-danger">{errors.city}</div>}
-                            </div>
-                            <div className="col">
-                                <label htmlFor="idpostcode" className="form-label">Postcode</label>
-                                <input ref={pcode} type="text" className="form-control" id="idpostcode" placeholder="Postcode" />
-                                {errors.postcode && <div className="text-danger">{errors.postcode}</div>}
-                            </div>
-                            <div className="col">
-                                <label htmlFor="idstate" className="form-label">State</label>
-                                <input ref={state} type="text" className="form-control" id="idstate" placeholder="State" />
-                                {errors.state && <div className="text-danger">{errors.state}</div>}
-                            </div>
-                            <div className="col">
-                                <label htmlFor="idcountry" className="form-label">Country</label>
-                                <input ref={country} type="text" className="form-control" id="idcountry" placeholder="Country" />
-                                {errors.country && <div className="text-danger">{errors.country}</div>}
-                            </div>
+                            <label htmlFor="idlastname" className="form-label">Last Name</label>
+                            <input ref={lname} type="text" className="form-control" id="idlastname" placeholder="Last Name" defaultValue="Jadhav" />
+                            {errors.lastname && <div className="text-danger">{errors.lastname}</div>}
                         </div>
                         <div className="col">
-                            <label htmlFor="idjobtitle" className="form-label">Job Title</label>
-                            <input ref={jobtitle} type="text" className="form-control" id="idjobtitle" placeholder="Job Title" />
+                            <label htmlFor="idphone" className="form-label">Phone</label>
+                            <input ref={phn} type="text" className="form-control" id="idphone" placeholder="Phone" defaultValue="8767432720" />
+                            {errors.phone && <div className="text-danger">{errors.phone}</div>}
                         </div>
-                        <div className="mb-3" style={{ marginTop: "20px" }}>
-                            <label htmlFor="formFile" className="form-label" style={{ fontFamily: "Questrail", fontSize: "16px", fontStyle: "italic" }}>
-                                Upload your photo <span>Note: Image size should be 1:1.</span>
-                            </label>
-                            <input className="form-control" type="file" accept='image/*' onChange={handlePhotoUpload} id="formFile" />
-                        </div>
-                        <div style={{ width: "100%", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                            {profileImg && <img src={profileImg} alt="Profile" height="150" style={{ borderRadius: "50%" }} />}
+                        <div className="col">
+                            <label htmlFor="idemail" className="form-label">Email Address</label>
+                            <input ref={eid} type="email" className="form-control" id="idemail" placeholder="Email Address" defaultValue="prem01@gmail.com" />
+                            {errors.email && <div className="text-danger">{errors.email}</div>}
                         </div>
                     </div>
-                    <div style={{ display: "flex", justifyContent: "center", marginTop: "80px", fontFamily: "kanit" }}>
-                        <button onClick={() => navigate('/')} className="btn btn-outline-danger" style={{ marginRight: "50px", width: "180px", fontSize: "18px" }}>Back</button>
-                        <button onClick={handleChange} className="btn btn-outline-success" style={{ width: "180px", fontSize: "18px" }}>Next</button>
+                    <div className="col">
+                        <label htmlFor="idaddress" className="form-label">Address</label>
+                        <input ref={add} type="text" className="form-control" id="idaddress" placeholder="Street name, no." defaultValue="Mauli nagar." />
+                        {errors.address && <div className="text-danger">{errors.address}</div>}
+                    </div>
+                    <div className="row row-cols-1 row-cols-md-2 g-3">
+                        <div className="col">
+                            <label htmlFor="idcity" className="form-label">City</label>
+                            <input ref={city} type="text" className="form-control" id="idcity" placeholder="City" defaultValue="Nashik" />
+                            {errors.city && <div className="text-danger">{errors.city}</div>}
+                        </div>
+                        <div className="col">
+                            <label htmlFor="idpostcode" className="form-label">Postcode</label>
+                            <input ref={pcode} type="text" className="form-control" id="idpostcode" placeholder="Postcode" defaultValue="423401" />
+                            {errors.postcode && <div className="text-danger">{errors.postcode}</div>}
+                        </div>
+                        <div className="col">
+                            <label htmlFor="idstate" className="form-label">State</label>
+                            <input ref={state} type="text" className="form-control" id="idstate" placeholder="State" defaultValue="Maharashtra" />
+                            {errors.state && <div className="text-danger">{errors.state}</div>}
+                        </div>
+                        <div className="col">
+                            <label htmlFor="idcountry" className="form-label">Country</label>
+                            <input ref={country} type="text" className="form-control" id="idcountry" placeholder="Country" defaultValue="India" />
+                            {errors.country && <div className="text-danger">{errors.country}</div>}
+                        </div>
+                    </div>
+                    <div className="col">
+                        <label htmlFor="idjobtitle" className="form-label">Job Title</label>
+                        <input ref={jobtitle} type="text" className="form-control" id="idjobtitle" placeholder="Job Title" defaultValue="Software Engineer" />
+                    </div>
+                    <div className="mb-3" style={{ marginTop: "20px" }}>
+                        <label htmlFor="formFile" className="form-label" style={{ fontFamily: "Questrail", fontSize: "16px", fontStyle: "italic" }}>
+                            Upload your photo <span>Note: Image size should be 1:1.</span>
+                        </label>
+                        <input className="form-control" type="file" accept='image/*' onChange={handlePhotoUpload} id="formFile" />
+                    </div>
+                    <div style={{ width: "100%", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                        {profileImg && <img src={profileImg} alt="Profile" height="150" style={{ borderRadius: "50%" }} />}
                     </div>
                 </div>
-                <div style={{ flexShrink: "0" }}>
-                    <Footer />
+                <div style={{ display: "flex", justifyContent: "center", marginTop: "80px", fontFamily: "kanit" }}>
+                    <button onClick={() => navigate('/')} className="btn btn-outline-danger" style={{ marginRight: "50px", width: "180px", fontSize: "18px" }}>Back</button>
+                    <button onClick={handleChange} className="btn btn-outline-success" style={{ width: "180px", fontSize: "18px" }}>Next</button>
                 </div>
             </div>
-        </>
+           
+        </div>
+    </>
+    
+    
     );
 };
 

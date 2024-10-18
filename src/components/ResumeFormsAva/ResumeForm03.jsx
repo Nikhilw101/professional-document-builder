@@ -273,31 +273,68 @@ const ResumeForm03 = () => {
             <div id="p0" className="mb-3">
               <span id="b0" style={{ display: "none" }}>0</span>
               <div className="row g-3">
-                <div className="col-12 col-md-6">
-                  <input id="schnamep0" type="text" className="form-control" placeholder="School/College Name" />
-                  {formErrors.schnamep0 && <div style={{ color: 'red' }}>{formErrors.schnamep0}</div>}
-                </div>
-                <div className="col-12 col-md-6">
-                  <input type="text" id="schlocp0" className="form-control" placeholder="School/College Location" />
-                  {formErrors.schlocp0 && <div style={{ color: 'red' }}>{formErrors.schlocp0}</div>}
-                </div>
-                <div className="col-12 col-md-6">
-                  <input type="text" id="edustrdatep0" className="form-control" placeholder="Start Date" />
-                  {formErrors.edustrdatep0 && <div style={{ color: 'red' }}>{formErrors.edustrdatep0}</div>}
-                </div>
-                <div className="col-12 col-md-6">
-                  <input type="text" id="eduendatep0" className="form-control" placeholder="End Date" />
-                  {formErrors.eduendatep0 && <div style={{ color: 'red' }}>{formErrors.eduendatep0}</div>}
-                </div>
-                <div className="col-12 col-md-6">
-                  <input type="text" id="degp0" className="form-control" placeholder="Degree" />
-                  {formErrors.degp0 && <div style={{ color: 'red' }}>{formErrors.degp0}</div>}
-                </div>
-                <div className="col-12 col-md-6">
-                  <input type="text" className="form-control" id="fieldp0" placeholder="Field of Study" />
-                  {formErrors.fieldp0 && <div style={{ color: 'red' }}>{formErrors.fieldp0}</div>}
-                </div>
-              </div>
+    <div className="col-12 col-md-6">
+        <input 
+            id="schnamep0" 
+            type="text" 
+            className="form-control" 
+            placeholder="School/College Name" 
+            defaultValue="VIT" // Dummy data
+        />
+        {formErrors.schnamep0 && <div style={{ color: 'red' }}>{formErrors.schnamep0}</div>}
+    </div>
+    <div className="col-12 col-md-6">
+        <input 
+            type="text" 
+            id="schlocp0" 
+            className="form-control" 
+            placeholder="School/College Location" 
+            defaultValue="Pune" // Dummy data
+        />
+        {formErrors.schlocp0 && <div style={{ color: 'red' }}>{formErrors.schlocp0}</div>}
+    </div>
+    <div className="col-12 col-md-6">
+        <input 
+            type="text" 
+            id="edustrdatep0" 
+            className="form-control" 
+            placeholder="Start Date" 
+            defaultValue="2012" // Dummy data
+        />
+        {formErrors.edustrdatep0 && <div style={{ color: 'red' }}>{formErrors.edustrdatep0}</div>}
+    </div>
+    <div className="col-12 col-md-6">
+        <input 
+            type="text" 
+            id="eduendatep0" 
+            className="form-control" 
+            placeholder="End Date" 
+            defaultValue="2016" // Dummy data
+        />
+        {formErrors.eduendatep0 && <div style={{ color: 'red' }}>{formErrors.eduendatep0}</div>}
+    </div>
+    <div className="col-12 col-md-6">
+        <input 
+            type="text" 
+            id="degp0" 
+            className="form-control" 
+            placeholder="Degree" 
+            defaultValue="Btech" // Dummy data
+        />
+        {formErrors.degp0 && <div style={{ color: 'red' }}>{formErrors.degp0}</div>}
+    </div>
+    <div className="col-12 col-md-6">
+        <input 
+            type="text" 
+            className="form-control" 
+            id="fieldp0" 
+            placeholder="Field of Study" 
+            defaultValue="Computer Science" // Dummy data
+        />
+        {formErrors.fieldp0 && <div style={{ color: 'red' }}>{formErrors.fieldp0}</div>}
+    </div>
+</div>
+
             </div>
           </div>
           <button type="button" onClick={additem} style={{ width: "100px", float: "right", marginTop: "20px" }} className="addbtn btn btn-outline-success">Add +</button>

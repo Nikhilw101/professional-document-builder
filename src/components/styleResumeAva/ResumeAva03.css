@@ -243,12 +243,13 @@
     }
 
     #contactinfot03 {
-        position: relative; /* Changed to relative */
-        margin-top: 550px;
+        /* position: relative; 
+        margin-top: 700px;
         padding: 10px;
         border-radius: 5px;
         text-align: left;
-        margin-left: -27vw;
+        margin-left: -27vw; */
+        display: none;
     }
 
     .fullnameAndPostt03 {
@@ -298,12 +299,13 @@
     }
 
     #contactinfot03 {
-        position: relative; /* Changed to relative */
-        margin-top: 550px;
+        /* position: relative; 
+        margin-top: 650px;
         padding: 10px;
         border-radius: 5px;
         text-align: left;
-        margin-left: -12vw;
+        margin-left: -27vw; */
+        display: none;
     }
 
     .lowerpartt03 {
@@ -322,3 +324,4 @@
         font-size: 0.875rem;
     }
 }
+

@@ -87,7 +87,7 @@ const ResumeForm5 = () => {
     e.preventDefault(); // Prevent default behavior
     if (validateForm()) {
       loadToLocalStorage();
-      navigate("/resume01"); // Navigate programmatically if validation passes
+      navigate("/resumeform6"); // Navigate programmatically if validation passes
     }
   };
 
@@ -103,10 +103,11 @@ const ResumeForm5 = () => {
             <span id="b0" style={{ display: "none" }}>0</span>
             <div className="row">
               <div className="col-12">
-                <input id="projectTitle0" type="text" className="form-control" placeholder="Project Title" />
+                <input id="projectTitle0" type="text" className="form-control" placeholder="Project Title" defaultValue="Resume-Builder-With-Avatar"/>
               </div>
               <div className="col-12 mt-3">
-                <textarea rows="4" id="projectDesc0" className="form-control" placeholder='Description...' ></textarea>
+                <textarea rows="4" id="projectDesc0" className="form-control" placeholder='Description...' defaultValue="The Resume Builder with Avatar allows users to create personalized resumes by selecting designs and generating unique avatars,
+                 enhancing their professional presentation with a creative touch."></textarea>
               </div>
             </div>
           </div>

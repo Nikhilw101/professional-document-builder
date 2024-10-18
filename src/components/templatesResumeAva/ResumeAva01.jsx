@@ -1,14 +1,12 @@
 import React, { useRef, useState, useEffect } from 'react'
-// now lets import css file
 import { useReactToPrint } from 'react-to-print'
 import html2canvas from 'html2canvas';
 import { Link } from 'react-router-dom';
-import "../styleResumeAva/ResumeAva01.css"
-
-
+import "../styleResume/Resume01.css"
+import Navbar from '../Navbar';
+import Footer from '../Footer';
 
 const ResumeAva01 = () => {
-
   document.body.style.background = "white";
 
   const [Image, setImage] = useState()
@@ -18,72 +16,29 @@ const ResumeAva01 = () => {
   const [phone, setphone] = useState()
   const [email, setemail] = useState()
 
-  //address info
+  // Address info
   const [street, setstreet] = useState()
   const [city, setcity] = useState()
   const [state, setstate] = useState()
   const [country, setcountry] = useState()
   const [postcode, setpostcode] = useState()
 
-  //educational details 
+  // Educational details 
   const [educationHTML, seteducationHTML] = useState()
 
-  //summary
+  // Summary
   const [ResumeDescription, setResumeDescription] = useState()
 
-  //skills 
+  // Skills 
   const [ResumeSkills, setResumeSkills] = useState()
 
-  //Experience
+  // Experience
   const [experienceHTML, setexperienceHTML] = useState()
 
-  //Project info
+  // Project info
   const [projectInfoHTML, setprojectInfoHTML] = useState()
 
-  useEffect(() => {
-    //image photo 
- 
-
-    //fetch objs from storage 
-    const personalInfo = JSON.parse(localStorage.getItem("personalDetails"))
-    //personal info
-    if (personalInfo !== null) {
-      setfname(personalInfo.firstname)
-      setlname(personalInfo.lastname)
-      setjobTitle(personalInfo.jobtitle)
-
-      //contact info
-      setphone(personalInfo.phone)
-      setemail(personalInfo.email)
-
-      //address info
-      setstreet(personalInfo.address)
-      setcity(personalInfo.city)
-      setstate(personalInfo.state)
-      setcountry(personalInfo.country)
-      setpostcode(personalInfo.postcode)
-    }
-
-    //educational info
-    const education = JSON.parse(localStorage.getItem("Education"));
-    populateEducation(education)
-
-    //summary
-    setResumeDescription(localStorage.getItem("ResumeDescription"));
-
-    //Experience
-    const experience = JSON.parse(localStorage.getItem("ProfessionalExperience"))
-    populateExperience(experience);
-
-    //skills
-    const skills = JSON.parse(localStorage.getItem('skills'));
-    populateSkills(skills)
-
-    //project Info
-    const projectInfo = JSON.parse(localStorage.getItem('projectInfo'));
-    populateProject(projectInfo);
-  }, [])
-
+  // Check for mobile view
   const [alertShown, setAlertShown] = useState(false);
   useEffect(() => {
     const handleResize = () => {
@@ -102,6 +57,51 @@ const ResumeAva01 = () => {
     // Cleanup event listener on component unmount
     return () => window.removeEventListener('resize', handleResize);
   }, [alertShown]);
+
+  useEffect(() => {
+    // Image photo 
+    setImage(localStorage.getItem("profilePhoto"));
+
+    // Fetch objs from storage 
+    const personalInfo = JSON.parse(localStorage.getItem("personalDetails"))
+    // Personal info
+    if (personalInfo !== null) {
+      setfname(personalInfo.firstname)
+      setlname(personalInfo.lastname)
+      setjobTitle(personalInfo.jobtitle)
+
+      // Contact info
+      setphone(personalInfo.phone)
+      setemail(personalInfo.email)
+
+      // Address info
+      setstreet(personalInfo.address)
+      setcity(personalInfo.city)
+      setstate(personalInfo.state)
+      setcountry(personalInfo.country)
+      setpostcode(personalInfo.postcode)
+    }
+
+    // Educational info
+    const education = JSON.parse(localStorage.getItem("Education"));
+    populateEducation(education)
+
+    // Summary
+    setResumeDescription(localStorage.getItem("ResumeDescription"));
+
+    // Experience
+    const experience = JSON.parse(localStorage.getItem("ProfessionalExperience"))
+    populateExperience(experience);
+
+    // Skills
+    const skills = JSON.parse(localStorage.getItem('skills'));
+    populateSkills(skills)
+
+    // Project Info
+    const projectInfo = JSON.parse(localStorage.getItem('projectInfo'));
+    populateProject(projectInfo);
+  }, [])
+
   const populateSkills = (skills) => {
     if (skills[0].skill !== "") {
       setResumeSkills(
@@ -111,9 +111,7 @@ const ResumeAva01 = () => {
               <h3 className="titlet01">Skills</h3>
               <ul className='skilllistt01'>
                 {skills.map((sk, index) => (
-
-                  <li className="listitemt01">{sk.skill}</li>
-
+                  <li className="listitemt01" key={index}>{sk.skill}</li>
                 ))}
               </ul>
             </div>
@@ -124,7 +122,7 @@ const ResumeAva01 = () => {
   }
 
   const populateExperience = (experience) => {
-    if (experience[0].WorkSummary !== "" || experience[0].StartDate !== "" || experience[0].PositionTitle !== "" || experience[0].EndDate !== "" || experience[0].ComponyName !== "") {
+    if (experience[0].WorkSummary !== "" || experience[0].StartDate !== "" || experience[0].PositionTitle !== "" || experience[0].EndDate !== "" || experience[0].CompanyName !== "") {
       setexperienceHTML(
         <>
           <div className="boxt01" id="experiencet01" >
@@ -138,7 +136,7 @@ const ResumeAva01 = () => {
                   <span>{exp.CompanyName}</span>
                 </div>
                 <div className="durationt01">
-                  <span className="startdatet01"></span>{exp.StartDate}<span>-</span><span className="lastdate">{exp.EndDate}</span>
+                  <span className="startdatet01">{exp.StartDate}</span><span>-</span><span className="lastdate">{exp.EndDate}</span>
                 </div>
                 <div className="descriptiont01">{exp.WorkSummary}</div>
               </div>
@@ -155,9 +153,9 @@ const ResumeAva01 = () => {
         <>
           <div className='boxt01' id="Educationt01">
             <h3 className="title1t01" id="educatetitlet01" >Education</h3>
-            <ul class="rightsidelistt01">
+            <ul className="rightsidelistt01">
               {education.map((edu, index) => (
-                <li>
+                <li key={index}>
                   <div>
                     <h4><span>{edu.deg}</span> in <span>{edu.field}</span></h4>
                   </div>
@@ -178,13 +176,12 @@ const ResumeAva01 = () => {
       setprojectInfoHTML(
         <>
           <div className="boxt01" id="projectt01">
-
             <h3 className="titlet01" id="protitt01" >Project</h3>
             <ol>
               {projectInfo.map((prj, index) => (
-                <div className="Pro1t01">
-                  <div className="protitlet01">{prj.projectTitle}</div>
-                  <div className="prodescript01">{prj.projectDesc}</div>
+                <div className="Pro1t01" key={index}>
+                  <div className="protitlet01 line-spacing">{prj.projectTitle}</div>
+                  <div className="prodescript01 line-spacing">{prj.projectDesc} </div>
                 </div>
               ))}
             </ol>
@@ -201,7 +198,6 @@ const ResumeAva01 = () => {
     content: () => componentRef.current,
   });
 
-
   const downloadImage = () => {
     html2canvas(table).then(function (canvas) {
       const link = document.createElement('a');
@@ -211,191 +207,142 @@ const ResumeAva01 = () => {
     });
   }
 
-  const avatarImage = localStorage.getItem('avatarImage');
 
+  const [links, setLinks] = useState({
+    linkedin: '',
+    github: '',
+    additionalLinks: [],
+  });
+
+  useEffect(() => {
+    // Load links from local storage
+    const linkedin = localStorage.getItem('LinkedInLink') || '';
+    const github = localStorage.getItem('GitHubLink') || '';
+    const linkCount = parseInt(localStorage.getItem('linkCount'), 10) || 0;
+    const additionalLinks = [];
+
+    for (let i = 0; i < linkCount; i++) {
+      const link = localStorage.getItem(`AdditionalLink${i}`) || '';
+      if (link) additionalLinks.push(link);
+    }
+
+    setLinks({ linkedin, github, additionalLinks });
+  }, []);
+
+  const avatarImage = localStorage.getItem('avatarImage');
   return (
     <>
       <div className="containert01">
-
         <div className='resumet01' ref={componentRef} id="resumet01">
-
-          <div className='leftt01'>
-
-          <div className='imgcontainert01'>
+        <div className='leftt01'>
+        <div className='imgcontainert01'>
               <img className='userPhotot01' src={avatarImage} alt="User Avatar" />
             </div>
-
-            <div className='fullnameAndPostt01'>
-
-              <div className='namet01'>
-                <span className='fullNamet01'><span>{fname}</span>&nbsp;<span>{lname}</span></span>
-              </div>
-
-              <div className='positiont01'>
-                <span className='post01'>{jobTitle}</span>
-              </div>
-            </div>
-
-            <div className='boxt01' id="contactinfot01" >
-              <h3 className="titlet01">Contact</h3>
-
-              <ul classname="leftsidelistt01">
-                <li>
-                  <span className="icont01" id="icon1t01"><i class="fa fa-phone" aria-hidden="true"></i></span>
-                  <span className="textt01">{phone}</span>
-                </li>
-                <div className='list2t01'>
-                  <li >
-                    <span className="icont01" id="icon2t01"><i class="fa fa-envelope-o" aria-hidden="true"></i></span>
-                    <span className="text2t01">{email}</span>
-                  </li>
-                </div>
-                {/* <li>
-                  <span className="icont01" id="icon3t01"><i class="fa fa-linkedin-square" aria-hidden="true"></i></span>
-                  <span className="text">www.linked.com </span>
-                </li> */}
-                <div className='list4t01'>
-                  <li >
-                    <span className="icont01" id="icon4t01"><i class="fa fa-map-marker" aria-hidden="true"></i></span>
-                    <div className='addres'>
-                      <span className="textt01" id="text4t01"><span>{street}</span>, <span>{city}</span><span>, </span><span>{state}</span>, <span>{country}</span><span>{postcode}</span></span>
-                    </div>
-                  </li>
-                </div>
-              </ul>
-            </div>
-
-            {projectInfoHTML}
-            {/* <div className="boxt01" id="projectt01"> */}
-            {/* <h3 className="titlet01" id="protitt01" >Project</h3> */}
-            {/* <div className="projectsListt01">
-              <div className="Pro1t01">
-                <div className="protitlet01">data structure library</div>
-                <div className="prodescript01">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, vero?</div>
-              </div>
-
-              <div className="pro2t01">
-                <div className='protitlet01'>chatbot</div>
-                <div className="prodescript01">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur repellendus incidunt fuga impedit veniam.</div>
-              </div>
-            </div> */}
-
-            {ResumeSkills}
-            {/* </div> */}
-            {/* <div className="boxt01" id="Skillst01">
-              <h3 className="titlet01">Skills</h3>
-              <ul className='skilllistt01'>
-                <li >machine learning</li>
-                <li className="listitemt01">analytics</li>
-                <li className="listitemt01">Communication and leadership</li>
-                <li className="listitemt01">java developer</li>
-
-              </ul>
-            </div> */}
-
-          </div>
-
-          <div className='rightt01'>
-
-            <div className="boxt01" id="summaryboxt01" >
-              <h3 className="title1t01">Summary</h3>
-              <div id="summaryt01" >{ResumeDescription}</div>
-            </div>
-
-
-            {educationHTML}
-            {/* <div className='boxt01' id="Educationt01">
-              <h3 className="title1t01" id="educatetitlet01" >Education</h3>
-              <ul class="rightsidelistt01">
-                <li>
-                  <div>
-                    <h4>Masters degree in computer science</h4>
-                  </div>
-                  <div>2011-2013</div>
-                  <div>d.y.patil university</div>
-                  <div>123 Anywhere st, Any city</div>
-                </li>
-              </ul>
-            </div> */}
-
-            {experienceHTML}
-            {/* <div className="boxt01" id="experiencet01" >
-              <h3 className="title1t01">Experience</h3>
-              <div className="jobtitlet01">
-                <label>java developer</label>
-              </div>
-              <div className='companynamet01'>
-                <span>infosys | </span><span>123,pune shivaji road</span>
-              </div>
-              <div className="durationt01">
-                <span className="startdatet01">2021</span><span>-</span><span className="lastdate">present</span>
-              </div>
-              <div className="descriptiont01">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil cumque fugit praesentium quisquam neque adipisci quidem placeat similique molestias? Velit.</div>
-
-              <div className="jobtitlet01">
-                <label>Java developer</label>
-              </div>
-              <div className='companynamet01'>
-                <span>infosys | </span><span>123,pune shivaji road</span>
-              </div>
-              <div className="durationt01">
-                <span className="startdatet01">2019</span><span>-</span><span className="lastdate">2021</span>
-              </div>
-              <div className="descriptiont01">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim quaerat cupiditate repellendus harum nemo amet, quibusdam qui perferendis dignissimos deleniti.</div>
-
-              <div className="jobtitlet01">
-                <label>java developer</label>
-              </div>
-              <div className='companynamet01'>
-                <span>infosys | </span><span>123,pune shivaji road</span>
-              </div>
-              <div className="durationt01">
-                <span className="startdatet01">2016</span><span>-</span><span className="lastdate">2019</span>
-              </div>
-              <div className="descriptiont01">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias aliquam mollitia illum blanditiis facilis delectus itaque ipsa soluta esse! Porro.</div>
-            </div> */}
-          </div>
+      <div className='fullnameAndPostt01'>
+        <div className='namet01'>
+          <span className='fullNamet01'>
+            <span>{fname}</span>&nbsp;<span>{lname}</span>
+          </span>
         </div>
+        <div className='positiont01'>
+          <span className='post01'>{jobTitle}</span>
+        </div>
+      </div>
+      <div className='boxt01' id="contactinfot01">
+        <h3 className="titlet01">Contact</h3>
+        <ul className="leftsidelistt01">
+          <li>
+            <span className="icont01" id="icon1t01">
+              <i className="fa fa-phone" aria-hidden="true"></i>
+            </span>
+            <span className="textt01">{phone}</span>
+          </li>
+          <div className='list2t01'>
+            <li>
+              <span className="icont01" id="icon2t01">
+                <i className="fa fa-envelope-o" aria-hidden="true"></i>
+              </span>
+              <span className="text2t01">{email}</span>
+            </li>
+          </div>
+          <div className='list4t01'>
+            <li>
+              <span className="icont01" id="icon4t01">
+                <i className="fa fa-map-marker" aria-hidden="true"></i>
+              </span>
+              <span className="text4t01">{street}, {city}, {state}, {country}, {postcode}</span>
+            </li>
+          </div>
+        </ul>
+      </div>
+      <div className='boxt01'>
+  <h3 className="titlet01">Important Links</h3>
+  <ul className="leftsidelistt01">
+    <li>
+      <span className="icont01"><i className="fab fa-linkedin" aria-hidden="true"></i></span>
+      <span className="textt01">
+        <a href={links.linkedin} target="_blank" rel="noopener noreferrer" title={links.linkedin || ''}>
+          {links.linkedin ? links.linkedin : 'LinkedIn Profile'}
+        </a>
+      </span>
+    </li>
+    <li>
+      <span className="icont01"><i className="fab fa-github" aria-hidden="true"></i></span>
+      <span className="textt01">
+        <a href={links.github} target="_blank" rel="noopener noreferrer" title={links.github || ''}>
+          {links.github ? links.github : 'GitHub Profile'}
+        </a>
+      </span>
+    </li>
+    {links.additionalLinks.map((link, index) => (
+      <li key={index}>
+        <span className="icont01"><i className="fas fa-external-link-alt" aria-hidden="true"></i></span>
+        <span className="textt01">
+          <a href={link} target="_blank" rel="noopener noreferrer" title={link}>
+            {link}
+          </a>
+        </span>
+      </li>
+    ))}
+  </ul>
+</div>
 
-      </div >
 
-      {/* buttons to print the document */}
+      {ResumeSkills}
+    </div>
+
+    <div className='rightt01'>
+  <div className='boxt01' id="summart01">
+    <h3 className="titlet01">Summary</h3>
+    <div className='descriptiont01'>{ResumeDescription}</div>
+  </div>
+  <div className="section-spacing">
+    {experienceHTML}
+  </div>
+  <div className="section-spacing">
+    {educationHTML}
+  </div>
+  <div className="section-spacing">
+    {projectInfoHTML}
+  </div>
+</div>
+
+        </div>
+      </div>
+
+      {/* Buttons to print the document */}
       <div className="container" style={{ "width": "100%", "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "center", marginTop: "40px", "gap": "30px" }}>
-
-
-        <Link to="/resumeform00" k><button id='eidtForm' type="button" className="btn btn-success business01-btn">EDIT FORM</button></Link>
-      
+        <Link to="/resumeform1"><button id='editForm' type="button" className="btn btn-success business01-btn">EDIT FORM</button></Link>
+  
         <button onClick={downloadImage} type="button" className="btn btn-success business01-btn">Download Image</button>
-
-      </div>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          fontFamily: "kanit",
-          marginBottom: "30px",
-          marginTop: "30px"
-        }}
-      >
-        <Link
-          to="/resumeform06"
-          class="btn btn-outline-danger"
-          style={{ marginRight: "50px", width: "180px", fontSize: "18px" }}
-        >
-          Back
-        </Link>
-
-        <Link
-          to="/resumeava02"
-          class="btn btn-outline-success"
-          style={{ width: "180px", fontSize: "18px" }}
-        >
-          Next
-        </Link>
       </div>
 
+      <div style={{ display: "flex", justifyContent: "center", fontFamily: "kanit", marginBottom: "30px", marginTop: "30px" }}>
+        <Link to="/resumeform06" className="btn btn-outline-danger" style={{ marginRight: "50px", width: "180px", fontSize: "18px" }}>Back</Link>
+        <Link to="/resumeAva02" className="btn btn-outline-success" style={{ width: "180px", fontSize: "18px" }}>Next</Link>
+      </div>
     </>
   )
 }
 
-export default ResumeAva01
+export default ResumeAva01;

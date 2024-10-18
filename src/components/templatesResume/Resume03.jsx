@@ -206,6 +206,26 @@ const Resume03 = () => {
         });
     }
 
+    const [links, setLinks] = useState({
+        linkedin: '',
+        github: '',
+        additionalLinks: [],
+      });
+    
+      useEffect(() => {
+        // Load links from local storage
+        const linkedin = localStorage.getItem('LinkedInLink') || '';
+        const github = localStorage.getItem('GitHubLink') || '';
+        const linkCount = parseInt(localStorage.getItem('linkCount'), 10) || 0;
+        const additionalLinks = [];
+    
+        for (let i = 0; i < linkCount; i++) {
+          const link = localStorage.getItem(`AdditionalLink${i}`) || '';
+          if (link) additionalLinks.push(link);
+        }
+    
+        setLinks({ linkedin, github, additionalLinks });
+      }, []);
 
     return (<>
         <div className="containert03">
@@ -309,6 +329,7 @@ const Resume03 = () => {
                         {/* project info */}
                         {projectInfoHTML}
 
+
                         {/* <div className="boxt03" id="projectt03"> */}
                         {/* <h3 className="titlet03" id="protitt03" >Project</h3> */}
                         {/* <div className="projectsListt03">
@@ -323,6 +344,38 @@ const Resume03 = () => {
                                 </div>
                             </div> */}
                         {/* </div> */}
+
+                        <div className='boxt02'>
+  <h4 className="titlet02 mx-3 mt-3">Important Links</h4>
+  <ul className="leftsidelistt02">
+    <li>
+      <span className="icont02"><i className="fab fa-linkedin" aria-hidden="true"></i></span>
+      <span className="textt02">
+        <a href={links.linkedin} target="_blank" rel="noopener noreferrer" title={links.linkedin || ''}>
+          {links.linkedin ? links.linkedin : 'LinkedIn Profile'}
+        </a>
+      </span>
+    </li>
+    <li>
+      <span className="icont02"><i className="fab fa-github" aria-hidden="true"></i></span>
+      <span className="textt02">
+        <a href={links.github} target="_blank" rel="noopener noreferrer" title={links.github || ''}>
+          {links.github ? links.github : 'GitHub Profile'}
+        </a>
+      </span>
+    </li>
+    {links.additionalLinks.map((link, index) => (
+      <li key={index}>
+        <span className="icont02"><i className="fas fa-external-link-alt" aria-hidden="true"></i></span>
+        <span className="textt02">
+          <a href={link} target="_blank" rel="noopener noreferrer" title={link}>
+            {link}
+          </a>
+        </span>
+      </li>
+    ))}
+  </ul>
+</div>
                     </div>
                 </div>
             </div>

@@ -87,7 +87,7 @@ const ResumeForm05 = () => {
     e.preventDefault(); // Prevent default behavior
     if (validateForm()) {
       loadToLocalStorage();
-      navigate("/resumeAva01"); // Navigate programmatically if validation passes
+      navigate("/resumeform06"); // Navigate programmatically if validation passes
     }
   };
 
@@ -103,10 +103,11 @@ const ResumeForm05 = () => {
             <span id="b0" style={{ display: "none" }}>0</span>
             <div className="row">
               <div className="col-12">
-                <input id="projectTitle0" type="text" className="form-control" placeholder="Project Title" />
+                <input id="projectTitle0" type="text" className="form-control" placeholder="Project Title" defaultValue="Resume-Builder-With-Avatar"/>
               </div>
               <div className="col-12 mt-3">
-                <textarea rows="4" id="projectDesc0" className="form-control" placeholder='Description...' ></textarea>
+                <textarea rows="4" id="projectDesc0" className="form-control" placeholder='Description...' defaultValue="The Resume Builder with Avatar allows users to create personalized resumes by selecting designs and generating unique avatars,
+                 enhancing their professional presentation with a creative touch."></textarea>
               </div>
             </div>
           </div>
@@ -115,7 +116,7 @@ const ResumeForm05 = () => {
       </div>
 
       <div style={{ display: "flex", justifyContent: "center", marginTop: "80px", fontFamily: "kanit", marginBottom: "15vh" }}>
-        <Link to="/resumeform04" className="btn btn-outline-danger" style={{ marginRight: "50px", width: "180px", fontSize: "18px" }}>Back</Link>
+        <Link to="/resumeform4" className="btn btn-outline-danger" style={{ marginRight: "50px", width: "180px", fontSize: "18px" }}>Back</Link>
         <button onClick={handleNext} className="btn btn-outline-success" style={{ width: "180px", fontSize: "18px" }}>Next</button>
       </div>
     </>

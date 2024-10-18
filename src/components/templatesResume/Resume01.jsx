@@ -180,8 +180,8 @@ const Resume01 = () => {
             <ol>
               {projectInfo.map((prj, index) => (
                 <div className="Pro1t01" key={index}>
-                  <div className="protitlet01">{prj.projectTitle}</div>
-                  <div className="prodescript01">{prj.projectDesc}</div>
+                  <div className="protitlet01 line-spacing">{prj.projectTitle}</div>
+                  <div className="prodescript01 line-spacing">{prj.projectDesc} </div>
                 </div>
               ))}
             </ol>
@@ -207,55 +207,124 @@ const Resume01 = () => {
     });
   }
 
+
+  const [links, setLinks] = useState({
+    linkedin: '',
+    github: '',
+    additionalLinks: [],
+  });
+
+  useEffect(() => {
+    // Load links from local storage
+    const linkedin = localStorage.getItem('LinkedInLink') || '';
+    const github = localStorage.getItem('GitHubLink') || '';
+    const linkCount = parseInt(localStorage.getItem('linkCount'), 10) || 0;
+    const additionalLinks = [];
+
+    for (let i = 0; i < linkCount; i++) {
+      const link = localStorage.getItem(`AdditionalLink${i}`) || '';
+      if (link) additionalLinks.push(link);
+    }
+
+    setLinks({ linkedin, github, additionalLinks });
+  }, []);
   return (
     <>
       <div className="containert01">
         <div className='resumet01' ref={componentRef} id="resumet01">
-          <div className='leftt01'>
-            <div className='imgcontainert01'>
-              <img className='userPhotot01' src={Image} alt="" />
-            </div>
-            <div className='fullnameAndPostt01'>
-              <div className='namet01'>
-                <span className='fullNamet01'><span>{fname}</span>&nbsp;<span>{lname}</span></span>
-              </div>
-              <div className='positiont01'>
-                <span className='post01'>{jobTitle}</span>
-              </div>
-            </div>
-            <div className='boxt01' id="contactinfot01" >
-              <h3 className="titlet01">Contact</h3>
-              <ul className="leftsidelistt01">
-                <li>
-                  <span className="icont01" id="icon1t01"><i className="fa fa-phone" aria-hidden="true"></i></span>
-                  <span className="textt01">{phone}</span>
-                </li>
-                <div className='list2t01'>
-                  <li>
-                    <span className="icont01" id="icon2t01"><i className="fa fa-envelope-o" aria-hidden="true"></i></span>
-                    <span className="text2t01">{email}</span>
-                  </li>
-                </div>
-                <div className='list4t01'>
-                  <li>
-                    <span className="icont01" id="icon4t01"><i className="fa fa-map-marker" aria-hidden="true"></i></span>
-                    <span className="text4t01">{street}, {city}, {state}, {country}, {postcode}</span>
-                  </li>
-                </div>
-              </ul>
-            </div>
-            {ResumeSkills}
+        <div className='leftt01'>
+      <div className='imgcontainert01'>
+        <img className='userPhotot01' src={Image} alt="" />
+      </div>
+      <div className='fullnameAndPostt01'>
+        <div className='namet01'>
+          <span className='fullNamet01'>
+            <span>{fname}</span>&nbsp;<span>{lname}</span>
+          </span>
+        </div>
+        <div className='positiont01'>
+          <span className='post01'>{jobTitle}</span>
+        </div>
+      </div>
+      <div className='boxt01' id="contactinfot01">
+        <h3 className="titlet01">Contact</h3>
+        <ul className="leftsidelistt01">
+          <li>
+            <span className="icont01" id="icon1t01">
+              <i className="fa fa-phone" aria-hidden="true"></i>
+            </span>
+            <span className="textt01">{phone}</span>
+          </li>
+          <div className='list2t01'>
+            <li>
+              <span className="icont01" id="icon2t01">
+                <i className="fa fa-envelope-o" aria-hidden="true"></i>
+              </span>
+              <span className="text2t01">{email}</span>
+            </li>
           </div>
+          <div className='list4t01'>
+            <li>
+              <span className="icont01" id="icon4t01">
+                <i className="fa fa-map-marker" aria-hidden="true"></i>
+              </span>
+              <span className="text4t01">{street}, {city}, {state}, {country}, {postcode}</span>
+            </li>
+          </div>
+        </ul>
+      </div>
+      <div className='boxt01'>
+  <h3 className="titlet01">Important Links</h3>
+  <ul className="leftsidelistt01">
+    <li>
+      <span className="icont01"><i className="fab fa-linkedin" aria-hidden="true"></i></span>
+      <span className="textt01">
+        <a href={links.linkedin} target="_blank" rel="noopener noreferrer" title={links.linkedin || ''}>
+          {links.linkedin ? links.linkedin : 'LinkedIn Profile'}
+        </a>
+      </span>
+    </li>
+    <li>
+      <span className="icont01"><i className="fab fa-github" aria-hidden="true"></i></span>
+      <span className="textt01">
+        <a href={links.github} target="_blank" rel="noopener noreferrer" title={links.github || ''}>
+          {links.github ? links.github : 'GitHub Profile'}
+        </a>
+      </span>
+    </li>
+    {links.additionalLinks.map((link, index) => (
+      <li key={index}>
+        <span className="icont01"><i className="fas fa-external-link-alt" aria-hidden="true"></i></span>
+        <span className="textt01">
+          <a href={link} target="_blank" rel="noopener noreferrer" title={link}>
+            {link}
+          </a>
+        </span>
+      </li>
+    ))}
+  </ul>
+</div>
 
-          <div className='rightt01'>
-            <div className='boxt01' id="summart01" >
-              <h3 className="titlet01">Summary</h3>
-              <div className='descriptiont01'>{ResumeDescription}</div>
-            </div>
-            {experienceHTML}
-            {educationHTML}
-            {projectInfoHTML}
-          </div>
+
+      {ResumeSkills}
+    </div>
+
+    <div className='rightt01'>
+  <div className='boxt01' id="summart01">
+    <h3 className="titlet01">Summary</h3>
+    <div className='descriptiont01'>{ResumeDescription}</div>
+  </div>
+  <div className="section-spacing">
+    {experienceHTML}
+  </div>
+  <div className="section-spacing">
+    {educationHTML}
+  </div>
+  <div className="section-spacing">
+    {projectInfoHTML}
+  </div>
+</div>
+
         </div>
       </div>
 
@@ -267,7 +336,7 @@ const Resume01 = () => {
       </div>
 
       <div style={{ display: "flex", justifyContent: "center", fontFamily: "kanit", marginBottom: "30px", marginTop: "30px" }}>
-        <Link to="/resumeform5" className="btn btn-outline-danger" style={{ marginRight: "50px", width: "180px", fontSize: "18px" }}>Back</Link>
+        <Link to="/resumeform6" className="btn btn-outline-danger" style={{ marginRight: "50px", width: "180px", fontSize: "18px" }}>Back</Link>
         <Link to="/resume02" className="btn btn-outline-success" style={{ width: "180px", fontSize: "18px" }}>Next</Link>
       </div>
     </>

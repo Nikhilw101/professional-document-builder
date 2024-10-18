@@ -139,7 +139,7 @@ const ResumeForm4 = () => {
                         <span id="b0" style={{ display: "none" }}>0</span>
                         <div className="row align-items-center">
                             <div className="col">
-                                <input id="sk0" type="text" className="form-control" placeholder="Skill - like C++, Java" />
+                                <input id="sk0" type="text" className="form-control" placeholder="Skill - like C++, Java" defaultValue="Java Cpp C Php react Node" />
                             </div>
                             <div className="col-auto">
                                 <span className="material-symbols-outlined" style={{ cursor: "pointer" }}></span>
