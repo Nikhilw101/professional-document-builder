@@ -1,0 +1,125 @@
+body {
+    background-color: #f8f9fa; /* Light background for contrast */
+}
+
+.containert04 {
+    max-width: 800px; /* Set a max width for the resume */
+    margin: 20px auto; /* Center the container */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Add subtle shadow for depth */
+    background-color: #ffffff; /* White background for resume */
+}
+
+.resumet04 {
+    padding: 20px;
+}
+
+.upperpartt04 {
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+}
+
+.imgcontainert04 {
+    margin-bottom: 20px; /* Add margin below the image */
+      height: 150px;
+    width: 150px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    overflow: hidden;
+    border: 0.1px solid rgb(0, 0, 0);
+}
+
+.userPhotot04 {
+    width: 150px; /* Fixed width for the profile photo */
+    height: 150px; /* Fixed height */
+   
+
+
+}
+
+.fullNamet04 {
+    font-size: 24px; /* Font size for the name */
+    font-weight: bold; /* Bold font for emphasis */
+    color: #343a40; /* Dark text color */
+}
+
+.positiont04 {
+    font-size: 18px; /* Font size for job title */
+    color: #6c757d; /* Gray color for job title */
+}
+
+.boxt04 {
+    width: 100%; /* Full width for box */
+    margin: 10px 0; /* Margin for spacing */
+    padding: 15px; /* Padding for inner spacing */
+    border: 1px solid #e9ecef; /* Light border color */
+    border-radius: 5px; /* Rounded corners */
+    background-color: #f8f9fa; /* Light background for boxes */
+}
+
+.titlet04 {
+    font-size: 20px; /* Font size for section titles */
+    font-weight: bold; /* Bold font for section titles */
+    margin-bottom: 10px; /* Margin below titles */
+    color: #000000; /* Primary color for titles */
+}
+
+.leftsidelistt04, .leftsidelist1t04 {
+    list-style: none; /* Remove default list styling */
+    padding-left: 0; /* Remove padding */
+}
+
+.listitemt01 {
+    margin: 5px 0; /* Margin for list items */
+}
+
+.experienceblock {
+    margin: 15px 0; /* Margin for experience blocks */
+}
+
+.jobtitlet04 {
+    font-weight: bold; /* Bold font for job titles */
+}
+
+.companynamet04 {
+    color: #6c757d; /* Gray color for company name */
+}
+
+.durationt04 {
+    font-size: 14px; /* Smaller font for duration */
+    color: #868e96; /* Gray color for duration */
+}
+
+.descriptiont04 {
+    margin: 10px 0; /* Margin for description */
+}
+
+.text1t04, .text2t04, .text4t04 {
+    margin-left: 10px; /* Spacing for text */
+    color: #495057; /* Dark text color */
+}
+
+.icont04 {
+    font-size: 18px; /* Icon size */
+    color: #000000; /* Icon color */
+}
+
+.lowerpartt04 {
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space out left and right sections */
+}
+
+.leftsidet04, .rightsidet04 {
+    width: 48%; /* Set width for left and right sections */
+}
+
+@media (max-width: 768px) {
+    .lowerpartt04 {
+        flex-direction: column; /* Stack sections vertically on smaller screens */
+    }
+    .leftsidet04, .rightsidet04 {
+        width: 100%; /* Full width on small screens */
+    }
+}

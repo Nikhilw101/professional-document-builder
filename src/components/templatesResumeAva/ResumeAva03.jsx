@@ -405,7 +405,7 @@ const ResumeAva03 = () => {
                 </Link>
 
                 <Link
-
+                    to="/resumeava04"
                     class="btn btn-outline-success"
                     style={{ width: "180px", fontSize: "18px" }}
                 >

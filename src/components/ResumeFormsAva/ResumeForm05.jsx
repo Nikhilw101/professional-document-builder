@@ -19,32 +19,35 @@ const ResumeForm05 = () => {
       cardCount5 += 1;
       setcardcnt(cardCount5);
 
+     
       cardToLoad5 = `
-        <div id="p${cardCount5}" class="mb-3">
-          <span id="b${cardCount5}" style="display:none">${cardCount5}</span>
-          <hr>
-          <span class="material-symbols-outlined" style="float:right; cursor: pointer;" id="deleteElement${cardCount5}">delete</span>
-          <div class="row">
-            <div class="col-12">
-              <input id="projectTitle${cardCount5}" type="text" class="form-control" placeholder="Project Title" />
-            </div>
-            <div class="col-12 mt-3">
-              <textarea id="projectDesc${cardCount5}" rows="4" class="form-control" placeholder="Description..."></textarea>
-            </div>
+      <div id="p${cardCount5}" class="mb-3">
+        <span id="b${cardCount5}" style="display:none">${cardCount5}</span>
+        <hr>
+        <span class="material-symbols-outlined" style="float:right; cursor: pointer;" id="deleteElement${cardCount5}">delete</span>
+        <div class="row">
+          <div class="col-12">
+            <input id="projectTitle${cardCount5}" type="text" class="form-control" placeholder="Project Title" />
+          </div>
+          <div class="col-12 mt-3">
+            <textarea id="projectDesc${cardCount5}" rows="4" maxLength="150" class="form-control" placeholder="Description..."></textarea>
+            <div id="charCount${cardCount5}" style="font-size: 0.8em; color: gray;">150 characters remaining</div>
           </div>
         </div>
-      `;
+      </div>
+  `;
 
-      const ele = document.createElement('div');
-      ele.innerHTML = cardToLoad5;
-      document.getElementById("addnew5").appendChild(ele);
+  const ele = document.createElement('div');
+ele.innerHTML = cardToLoad5;
+document.getElementById("addnew5").appendChild(ele);
 
-      document.getElementById(`deleteElement${cardCount5}`).addEventListener("click", () => {
-        const cardNumber = document.getElementById(`b${cardcnt + 1}`);
-        const cardElement = document.getElementById(`p${cardcnt + 1}`);
-        removedElements5.push(Number.parseInt(cardNumber.textContent));
-        cardElement.style.display = "none";
-      });
+// Event listener for character counting
+const textarea = document.getElementById(`projectDesc${cardCount5}`);
+const charCountDisplay = document.getElementById(`charCount${cardCount5}`);
+textarea.addEventListener("input", function() {
+    const remaining = 150 - this.value.length;
+    charCountDisplay.textContent = `${remaining} characters remaining`;
+});
     } else {
       alert("More than 2 projects are not allowed in the current version");
     }
@@ -106,7 +109,7 @@ const ResumeForm05 = () => {
                 <input id="projectTitle0" type="text" className="form-control" placeholder="Project Title" defaultValue="Resume-Builder-With-Avatar"/>
               </div>
               <div className="col-12 mt-3">
-                <textarea rows="4" id="projectDesc0" className="form-control" placeholder='Description...' defaultValue="The Resume Builder with Avatar allows users to create personalized resumes by selecting designs and generating unique avatars,
+                <textarea rows="4" id="projectDesc0" className="form-control" maxLength={150} placeholder='Description...' defaultValue="The Resume Builder with Avatar allows users to create personalized resumes by selecting designs and generating unique avatars,
                  enhancing their professional presentation with a creative touch."></textarea>
               </div>
             </div>

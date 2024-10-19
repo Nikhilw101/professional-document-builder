@@ -41,11 +41,16 @@ import ResumeForm06 from "../ResumeFormsAva/ResumeForm06"
 import Resume01 from "../templatesResume/Resume01";
 import Resume02 from "../templatesResume/Resume02";
 import Resume03 from "../templatesResume/Resume03";
+import Resume04 from "../templatesResume/Resume04";
+import Resume05 from "../templatesResume/Resume05";
+
 
 //avatar
 import ResumeAva01 from "../templatesResumeAva/ResumeAva01";
 import ResumeAva02 from "../templatesResumeAva/ResumeAva02";
 import ResumeAva03 from "../templatesResumeAva/ResumeAva03";
+import ResumeAva04 from "../templatesResumeAva/ResumeAva04";
+import ResumeAva05 from "../templatesResumeAva/ResumeAva05";
 
 //business card
 
@@ -90,11 +95,15 @@ export default function AppRouter() {
         <Route path="/resume01" element={<Resume01 />} />
         <Route path="/resume02" element={<Resume02 />} />
         <Route path="/resume03" element={<Resume03 />} />
+        <Route path="/resume04" element={<Resume04 />} />
+        <Route path="/resume05" element={<Resume05 />} />
 
         {/* Resume Template  avatar*/}
         <Route path="/resumeava01" element={<ResumeAva01 />} />
         <Route path="/resumeava02" element={<ResumeAva02 />} />
         <Route path="/resumeava03" element={<ResumeAva03 />} />
+        <Route path="/resumeava04" element={<ResumeAva04 />} />
+        <Route path="/resumeava05" element={<ResumeAva05 />} />
 
 
 

@@ -287,9 +287,7 @@ const Resume02 = () => {
                         {ResumeSkills}
 
                         {/* project Info */}
-                        <div className="projectDetailst02">
-                            {projectInfoHTML}
-                        </div>
+                       
                     </div>
                     <div className="rightt02">
                         <div className="rightUpt02">
@@ -308,12 +306,15 @@ const Resume02 = () => {
                             <div className="educationalDetailst02">
                                 {educationHTML}
                             </div>
+                            <div className="projectDetailst02">
+                            {projectInfoHTML}
+                        </div>
                         </div>
                     </div>
                 </div>
 
                  {/* buttons to print the document */}
-                <div className="container" style={{ "width": "100%", "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "center", marginTop: "150px", "gap": "30px" }}>
+                <div className="container" style={{ "width": "100%", "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "center", marginTop: "50px", "gap": "30px" }}>
 
 
                     <Link to="/resumeform1" k><button id='eidtForm' type="button" className="btn btn-success business01-btn">EDIT FORM</button></Link>

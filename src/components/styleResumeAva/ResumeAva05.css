@@ -1,0 +1,138 @@
+body {
+    background-color: #f0f2f5;
+
+    color: #333;
+}
+
+.resume-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+}
+
+.resume {
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid #000000;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.profile-picture img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 0.1px solid #120d0d;
+    
+}
+
+.name-title {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.name-title h1 {
+    font-size: 32px;
+    margin: 0;
+    color: #be8989;
+}
+
+.name-title h2 {
+    font-size: 22px;
+    color: #81a4c2;
+    margin: 0;
+}
+
+.contact-info {
+    font-size: 14px;
+    text-align: right;
+}
+
+.contact-info ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.contact-info li {
+    margin: 5px 0;
+    display: flex;
+    align-items: center;
+}
+
+.contact-info li i {
+    margin-right: 8px;
+}
+
+.section-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #000000;
+    padding-bottom: 5px;
+    color: #607cb4;
+}
+
+.section-content {
+    margin-top: 10px;
+}
+
+.skill-list, .education-list, .experience-list, .project-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.skill-list li, .education-list li, .experience-list li, .project-list li {
+    margin-bottom: 10px;
+}
+
+.skill-list li span, .education-list li span, .experience-list li span, .project-list li span {
+    font-weight: bold;
+    color: #6c757d;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.buttons .edit-button, .buttons .download-button {
+    padding: 10px 20px;
+    font-size: 14px;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.navigation .nav-button {
+    padding: 10px 20px;
+    font-size: 14px;
+}
+.header {
+    display: flex;
+    justify-content: space-between; /* Aligns items to the sides */
+    align-items: center;
+}
+
+.name-title {
+    text-align: right; /* Aligns text to the right */
+    margin-left: auto; /* Pushes it to the right */
+}
+
+.profile-picture {
+    margin-right: 20px; /* Adds space between picture and text */
+    background-color: rgb(255, 255, 255);
+   
+}

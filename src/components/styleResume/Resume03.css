@@ -217,7 +217,6 @@
   line-height: 1.1;
 } 
 
-
 /* Mobile Responsiveness using Bootstrap and media queries */
 @media (max-width: 826px) {
     .resumet03 {
@@ -244,12 +243,13 @@
     }
 
     #contactinfot03 {
-        position: relative; /* Changed to relative */
+        /* position: relative; 
         margin-top: 700px;
         padding: 10px;
         border-radius: 5px;
         text-align: left;
-        margin-left: -27vw;
+        margin-left: -27vw; */
+        display: none;
     }
 
     .fullnameAndPostt03 {
@@ -299,12 +299,13 @@
     }
 
     #contactinfot03 {
-        position: relative; /* Changed to relative */
+        /* position: relative; 
         margin-top: 650px;
         padding: 10px;
         border-radius: 5px;
         text-align: left;
-        margin-left: -27vw;
+        margin-left: -27vw; */
+        display: none;
     }
 
     .lowerpartt03 {
@@ -324,29 +325,3 @@
     }
 }
 
-@media (max-width: 826px) {
-    #contactinfot03 {
-        padding: 10px; /* Adjust padding for smaller screens */
-        margin-top: 20px; /* Adjust margin */
-        border-radius: 5px; /* Maintain rounded corners */
-    }
-
-    #contactinfot03 ul {
-        font-size: 15px; /* Reduce font size */
-    }
-
-    #contactinfot03 ul li {
-        flex-direction: column; /* Stack icon and text vertically */
-        align-items: flex-start; /* Align items to the left */
-    }
-}
-
-@media (max-width: 428px) {
-    #contactinfot03 {
-        margin-top: 10px; /* Further reduce margin */
-    }
-
-    #contactinfot03 ul {
-        font-size: 12px; /* Smaller font size for very small screens */
-    }
-}
